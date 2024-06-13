@@ -41,3 +41,6 @@ Exported variables allow you to customize:
 - if the scrolling should stop at the first or previous panel, and not allow to go any further
 - Two tab mode: either the text of every tab is always displayed, or only the active tab has its text shown (this is the option of the gifs)
 - size of the tabbar (in pixels)
+
+## What does not work
+If you build manually the structure by hand, it will not work. You have to use ScrollableTabContainer and let it build everything
