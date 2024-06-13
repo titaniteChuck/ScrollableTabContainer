@@ -1,0 +1,162 @@
+[gd_scene load_steps=11 format=3 uid="uid://dly8hqc3fci31"]
+
+[ext_resource type="Texture2D" uid="uid://c738ucwj2nr2x" path="res://resources/icons/shop.jpg" id="1_cpump"]
+[ext_resource type="Script" path="res://addons/ScrollableTabContainer/ScrollableTabContainer.gd" id="1_hfr70"]
+[ext_resource type="Script" path="res://addons/ScrollableTabContainer/ScrollablePanelContainer/ScrollablePanel.gd" id="2_y2qfc"]
+[ext_resource type="Texture2D" uid="uid://biwsvirjpxbxh" path="res://resources/icons/coin.png" id="4_b4knf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j8rwd"]
+bg_color = Color(1, 0.348677, 0.221566, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hkrnj"]
+bg_color = Color(0.409538, 0.683772, 0.278556, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ymi57"]
+bg_color = Color(0.234214, 0.673716, 0.685003, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_royym"]
+bg_color = Color(0.709356, 0.442265, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hs35f"]
+bg_color = Color(0.741485, 0.575104, 1.92523e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_clgyh"]
+content_margin_left = 20.0
+content_margin_right = 10.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tabbar" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hfr70")
+scroll_direction = 1
+
+[node name="Panel 1" type="PanelContainer" parent="Tabbar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_j8rwd")
+script = ExtResource("2_y2qfc")
+icon = ExtResource("1_cpump")
+title = "Tab 1"
+
+[node name="Label" type="Label" parent="Tabbar/Panel 1"]
+layout_mode = 2
+text = "Panel 1"
+horizontal_alignment = 1
+
+[node name="Panel 2" type="PanelContainer" parent="Tabbar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_hkrnj")
+script = ExtResource("2_y2qfc")
+icon = ExtResource("1_cpump")
+title = "Tab 2"
+
+[node name="Label" type="Label" parent="Tabbar/Panel 2"]
+layout_mode = 2
+text = "Panel 2"
+horizontal_alignment = 1
+
+[node name="Panel 3" type="PanelContainer" parent="Tabbar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_ymi57")
+script = ExtResource("2_y2qfc")
+icon = ExtResource("1_cpump")
+title = "Tab 3"
+
+[node name="Label" type="Label" parent="Tabbar/Panel 3"]
+layout_mode = 2
+text = "Panel 3"
+horizontal_alignment = 1
+
+[node name="Panel 4" type="PanelContainer" parent="Tabbar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_royym")
+script = ExtResource("2_y2qfc")
+icon = ExtResource("1_cpump")
+title = "Tab 4"
+
+[node name="Label" type="Label" parent="Tabbar/Panel 4"]
+layout_mode = 2
+text = "Panel 4"
+horizontal_alignment = 1
+
+[node name="Panel 5" type="PanelContainer" parent="Tabbar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_hs35f")
+script = ExtResource("2_y2qfc")
+icon = ExtResource("1_cpump")
+title = "Tab 5"
+
+[node name="Label" type="Label" parent="Tabbar/Panel 5"]
+layout_mode = 2
+text = "Panel 5"
+horizontal_alignment = 1
+
+[node name="HUD" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(7.97332, 0.958171)
+
+[node name="Label" type="Label" parent="HUD"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+offset_left = 1.25418
+offset_top = 7.30558
+offset_right = 81.2542
+offset_bottom = 30.3056
+scale = Vector2(0.145427, 1.05736)
+theme_override_styles/normal = SubResource("StyleBoxFlat_clgyh")
+text = "93"
+horizontal_alignment = 2
+
+[node name="Coin" type="Sprite2D" parent="HUD/Label"]
+position = Vector2(11.1043, 11.3101)
+scale = Vector2(0.0730933, 0.0708522)
+texture = ExtResource("4_b4knf")
